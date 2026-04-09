@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+"""
+ResearchFlow - 智能研究助手
+
+使用方法:
+    ./researchflow                    # 启动交互式 CLI
+    ./researchflow --help             # 显示帮助
+
+环境变量:
+    ANTHROPIC_API_KEY       - Kimi Code API Key
+    ANTHROPIC_BASE_URL      - API 地址 (默认: https://api.kimi.com/coding/)
+"""
+
+import sys
+from pathlib import Path
+
+# 添加项目路径
+PROJECT_DIR = Path(__file__).parent.resolve()
+sys.path.insert(0, str(PROJECT_DIR))
+
+# 导入并运行 CLI
+from cli.app import main
+
+if __name__ == "__main__":
+    main()
